@@ -1,9 +1,47 @@
 package horef_pack_jv;
-
-import javax.xml.namespace.*;
+import java.lang.Math;
 
 public class F {
-	
+
+	public static int prime_by_id(int i) {
+		int c = 0;
+		int cnum = 1;
+		while (c != i) {
+			if (prime(cnum)) c++;
+			cnum++;
+		}
+		return cnum-1;
+	}
+
+	public static int square_sum(int n) {
+		int sum = 0;
+		for (int i = 1; i <= n; i++) {
+			sum += i;
+		}
+		return sum*sum;
+	}
+
+	public static int sum_squares(int n) {
+		int sum = 0;
+		for (int i = 1; i <= n; i++) {
+			sum += i*i;
+		}
+		return sum;
+	}
+
+	public static String reverse_string(String s) {
+		char[] ret = new char[s.length()];
+		for (int i = s.length()-1; i >= 0; i--) {
+			ret[ret.length-i-1] = s.toCharArray()[i];
+		}
+		return String.valueOf(ret);
+	}
+
+	public static boolean palindrome(int n) {
+		String sn = String.valueOf(n);
+		if (sn.substring(0, sn.length()/2).equals(reverse_string(sn.substring((int)Math.ceil(sn.length()/2.0))))) return true;
+		return false;
+	}
 	
 	public static void print_matrix(Object[][] matrix) {
 		print("[");
